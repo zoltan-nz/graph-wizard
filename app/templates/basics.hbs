@@ -1,0 +1,72 @@
+<div class="row">
+  <div class="col-md-8">
+
+    <svg width="{{width}}" height="{{height}}" class="grey-bg">
+      <circle cx="100" cy="100" r="{{radius}}" stroke="black" stroke-width="5" fill="grey" />
+    </svg>
+
+    <svg width="{{width}}" height="{{height}}" class="grey-bg">
+      <rect x="75" y="75" rx='4' ry='4' width="{{radius}}" height="{{radius}}" fill="grey" stroke="black" stroke-width="5"/>
+    </svg>
+
+    <svg width="{{width}}" height="{{height}}" class="grey-bg">
+      <line x1="0" y1="0" x2="{{length}}" y2="{{length}}" stroke="black" stroke-width="5"/>
+    </svg>
+
+    <svg width="{{width}}" height="{{height}}" class="grey-bg">
+      <polyline points="{{polylinePoints}}"
+                stroke="orange" fill="transparent" stroke-width="5"/>
+    </svg>
+
+    <svg width="{{width}}" height="{{height}}" class="grey-bg">
+      <polygon points="{{polygonPoints}}"
+               stroke="green" fill="transparent" stroke-width="5"/>
+    </svg>
+
+    <svg width="{{width}}" height="{{height}}" class="grey-bg">
+      <path d="{{pathD}}" fill="none" stroke="blue" stroke-width="5"/>
+    </svg>
+
+
+  </div>
+  <div class="col-md-4">
+
+    Width:
+      {{ui-slider
+          value=width
+          defaultValue=300
+          min=1
+          max=500
+          step=1}}
+
+    Height:
+      {{ui-slider
+        value=height
+        defaultValue=300
+        min=1
+        max=500
+        step=1}}
+
+    Radius:
+      {{ui-slider
+          value=radius
+          defaultValue=50
+          min=1
+          max=500
+          step=1}}
+
+    Line length:
+      {{ui-slider
+        value=length
+        defaultValue=50
+        min=1
+        max=500
+        step=1}}
+
+    Polyline: {{input value=polylinePoints class='form-control'}}
+    Polygon: {{input value=polygonPoints class='form-control'}}
+    Path: {{input value=pathD class='form-control'}}
+
+  </div>
+</div>
+
