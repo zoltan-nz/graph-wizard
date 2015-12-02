@@ -251,9 +251,9 @@ Add to the menu in `application.hbs`
 </div>
 ```
 
-Add a line chart component to `chart.hbs`
+Insert `ember-chart` component to `chart.hbs`
 
-```
+```html
 <div class="row">
   <div class="col-md-12">
     {{ember-chart type='Line' data=model width=500 height=300 legend=true}}
@@ -264,8 +264,8 @@ Add a line chart component to `chart.hbs`
 Our model still empty, add some dummy data to model in our router.
 > Source: http://www.chartjs.org/docs/#line-chart-example-usage
 
-```
-// routes/chart.js
+```javascript
+// app/routes/chart.js
 import Ember from 'ember';
 
 export default Ember.Route.extend({
@@ -323,6 +323,7 @@ Add the component to our `chart2.hbs` template.
 Let's implement the component in `app/components/d3-chart.js`:
 
 ```javascript
+// app/components/d3-chart.js
 import Ember from 'ember';
 import d3 from 'd3';
 
