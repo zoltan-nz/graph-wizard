@@ -6,15 +6,33 @@ https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial
 http://www.w3schools.com/svg/
 
 
-###1. Install bootstrap
+###1. Setup the project
+
+Prerequisites:
+
+* node.js
+* ember-cli
+
+
+Create a new app:
+
+```
+ember new graph-wizard
+cd graph-wizard
+
+```
+
+Add sass and bootstrap to your project:
 
 ```
 ember install ember-cli-sass && ember install ember-cli-bootstrap-sassy && echo '@import "bootstrap";' > ./app/styles/app.scss && rm ./app/styles/app.css
 ```
 
-Add a custom css:
+Update `app/styles/app.scss`:
 
 ``` css
+@import "bootstrap";
+
 .grey-bg {
   background: #dddddd;
 }
@@ -24,9 +42,9 @@ Add a custom css:
 }
 ```
 
-2. SVG basic elements:
+###2. SVG basic elements
 
-Let's create a route first. 'basics'
+Let's create a `/basics` route first.
 
 ```
 ember g route basics
@@ -34,7 +52,7 @@ ember g route basics
 
 Add a little menu to `application.hbs`.
 
-```
+```html
 <div class="container">
 
   <ul class="nav nav-pills">
@@ -50,7 +68,7 @@ Add a little menu to `application.hbs`.
 Add basic shapes to `templates/basics.hbs`
 Source: https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Basic_Shapes
 
-```
+```html
 <div class="row">
   <div class="col-md-8">
 
@@ -90,7 +108,7 @@ Source: https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Basic_Shapes
 
 Add some ember magic with sliders and input boxes.
 
-First install the `ember-ui-slider` addon. 
+First, install the `ember-ui-slider` addon.
 (Search: http://www.emberaddons.com/?query=slider)
 
 ```
@@ -200,10 +218,10 @@ export default Ember.Controller.extend({
 More about path:
 https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths
 
-###3. Add ember-cli-chart
+###3. Create a chart with chart.js
 
 Let's play with a great chart addon: ember-cli-chart
-https://www.npmjs.com/package/ember-cli-chart
+> https://www.npmjs.com/package/ember-cli-chart
 
 Install the addon:
 
@@ -211,7 +229,7 @@ Install the addon:
 ember install ember-cli-chart
 ```
 
-Create a new route and page:
+Create a new `/chart` page route:
 
 ```
 ember g route chart
@@ -219,7 +237,7 @@ ember g route chart
 
 Add to the menu in `application.hbs`
 
-```
+```html
 <div class="container">
 
   <ul class="nav nav-pills">
@@ -244,7 +262,7 @@ Add a line chart component to `chart.hbs`
 ```
 
 Our model still empty, add some dummy data to model in our router.
-Source: http://www.chartjs.org/docs/#line-chart-example-usage
+> Source: http://www.chartjs.org/docs/#line-chart-example-usage
 
 ```
 // routes/chart.js
@@ -282,12 +300,29 @@ export default Ember.Route.extend({
 
 });
 ```
-4. D3.js graph
+###4. Drawing a simple graph with D3.js
 
-* Generate chart2 route.
-* Generate d3-chart component.
+Generate `/chart2` route:
 
 ```
+ember g route chart2
+```
+
+Generate `d3-chart` component:
+
+```
+ember g component d3-chart
+```
+
+Add the component to our `chart2.hbs` template.
+
+```
+{{d3-chart}}
+```
+
+Let's implement the component in `app/components/d3-chart.js`:
+
+```javascript
 import Ember from 'ember';
 import d3 from 'd3';
 
