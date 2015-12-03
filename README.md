@@ -2,8 +2,8 @@
 
 More about SVGs:
 
-https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial
-http://www.w3schools.com/svg/
+* https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial
+* http://www.w3schools.com/svg/
 
 
 ###1. Setup the project
@@ -13,7 +13,6 @@ Prerequisites:
 * node.js
 * ember-cli
 
-
 Create a new app:
 
 ```
@@ -22,7 +21,7 @@ cd graph-wizard
 
 ```
 
-Add sass and bootstrap to your project:
+Add sass and bootstrap to your project. Just run the following one-liner in your console:
 
 ```
 ember install ember-cli-sass && ember install ember-cli-bootstrap-sassy && echo '@import "bootstrap";' > ./app/styles/app.scss && rm ./app/styles/app.css
@@ -66,7 +65,7 @@ Add a little menu to `application.hbs`.
 ```
 
 Add basic shapes to `templates/basics.hbs`
-Source: https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Basic_Shapes
+> Source: https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Basic_Shapes
 
 ```html
 <div class="row">
@@ -108,11 +107,11 @@ Source: https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Basic_Shapes
 
 Add some ember magic with sliders and input boxes.
 
-First, install the `ember-ui-slider` addon.
-(Search: http://www.emberaddons.com/?query=slider)
+First, install the `ui-ember-slider` addon.
+> (Search: http://www.emberaddons.com/?query=slider)
 
 ```
-ember install ember-ui-slider
+ember install ui-ember-slider
 ```
 
 More info: https://github.com/lifegadget/ui-slider
@@ -216,7 +215,7 @@ export default Ember.Controller.extend({
 ```
 
 More about path:
-https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths
+> https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths
 
 ###3. Create a chart with chart.js
 
@@ -251,7 +250,7 @@ Add to the menu in `application.hbs`
 </div>
 ```
 
-Insert `ember-chart` component to `chart.hbs`
+Insert `ember-chart` co mponent to `chart.hbs`
 
 ```html
 <div class="row">
@@ -364,4 +363,3 @@ export default Ember.Component.extend({
 
 });
 ```
-
