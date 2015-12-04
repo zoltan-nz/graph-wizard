@@ -1,5 +1,8 @@
 # Graph-Wizard
 
+Demo:
+> http://graph-wizard.surge.sh/
+
 More about SVGs:
 
 * https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial

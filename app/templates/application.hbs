@@ -1,10 +1,10 @@
 <div class="container">
 
   <ul class="nav nav-pills">
-    <li>{{link-to 'Home' 'index'}}</li>
-    <li>{{link-to 'Basics' 'basics'}}</li>
-    <li>{{link-to 'Chart' 'chart'}}</li>
-    <li>{{link-to 'Chart2' 'chart2'}}</li>
+    {{#nav-link-to 'index'}}Home{{/nav-link-to}}
+    {{#nav-link-to  'basics'}}Basics{{/nav-link-to}}
+    {{#nav-link-to  'chart'}}Chart.js{{/nav-link-to}}
+    {{#nav-link-to  'chart2'}}D3.js{{/nav-link-to}}
   </ul>
 
   {{outlet}}
